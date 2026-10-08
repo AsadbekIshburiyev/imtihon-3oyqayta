@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #111;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+        }
+
+        .left {
+            width: 21%;
+            min-height: 100vh;
+            padding: 15px 25px;
+            border-right: 1px solid #ddd;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 30px;
+            color: #1da1f2;
+            margin-bottom: 25px;
+        }
+
+        .menu p {
+            margin: 0;
+            padding: 12px 8px;
+            font-size: 15px;
+        }
+
+        .menu span {
+            margin-left: 12px;
+            font-weight: bold;
+        }
+
+        .left>button {
+            width: 145px;
+            padding: 11px;
+            margin-top: 15px;
+            border: 0;
+            border-radius: 25px;
+            background: #1da1f2;
+            color: white;
+            font-weight: bold;
+        }
+
+        .account {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .avatar,
+        .user-img,
+        .post-user,
+        .small-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ddd;
+        }
+
+        .account p,
+        .person p {
+            margin: 3px 0;
+            font-size: 12px;
+            color: #777;
+        }
+
+        .main {
+            width: 55%;
+            border-right: 1px solid #ddd;
+        }
+
+        .top {
+            height: 55px;
+            padding: 0 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .write {
+            padding: 15px;
+            display: flex;
+            gap: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .write-box {
+            width: 100%;
+        }
+
+        .write-box p {
+            color: #777;
+            margin: 8px 0 20px;
+        }
+
+        .write-bottom {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            color: #1da1f2;
+        }
+
+        .write-bottom button {
+            margin-left: auto;
+            border: 0;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background: #8ed0f5;
+            color: white;
+            font-weight: bold;
+        }
+
+        .post {
+            display: flex;
+            gap: 12px;
+            padding: 18px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .post-content {
+            flex: 1;
+        }
+
+        .post-title {
+            display: flex;
+            gap: 6px;
+        }
+
+        .post-title span {
+            color: #777;
+            font-size: 13px;
+        }
+
+        .post-title strong {
+            margin-left: auto;
+        }
+
+        .post-content p {
+            margin: 7px 0;
+            font-size: 14px;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 18px;
+            color: #777;
+            font-size: 13px;
+        }
+
+        .photo {
+            width: 100%;
+            height: 280px;
+            margin-top: 12px;
+            border-radius: 12px;
+            background: #ddd;
+        }
+
+        .right {
+            width: 24%;
+            padding: 8px 15px;
+        }
+
+        .right input {
+            width: 100%;
+            padding: 12px;
+            border: 0;
+            border-radius: 25px;
+            background: #eef1f2;
+            outline: none;
+        }
+
+        .card {
+            margin-top: 15px;
+            padding: 12px;
+            background: #f7f8f8;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-top: 5px;
+        }
+
+        .trend {
+            padding: 10px 0;
+        }
+
+        .trend small,
+        .trend span {
+            display: block;
+            color: #777;
+            font-size: 11px;
+        }
+
+        .trend b {
+            display: block;
+            margin: 4px 0;
+        }
+
+        .card a {
+            color: #1da1f2;
+            font-size: 13px;
+        }
+
+        .person {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 15px 0;
+        }
+
+        .person button {
+            margin-left: auto;
+            border: 0;
+            padding: 8px 14px;
+            border-radius: 18px;
+            background: #000;
+            color: white;
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 18px;
+            color: #777;
+            font-size: 11px;
+            line-height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="logo">♥️</div>
+            <div class="menu">
+                <p><span>Home</span></p>
+                <p> <span>Explore</span></p>
+                <p><span>Notifications</span></p>
+                <p><span>Messages</span></p>
+                <p><span>Bookmarks</span></p>
+                <p><span>Lists</span></p>
+                <button class="tugma" onclick="location.href='profile.html'">Profile</button>
+                <p><span>More</span></p>
+            </div>
+            <button>Tweeier</button>
+            <div class="account">
+                <div class="avatar"></div>
+                <div>
+                    <img src="/Profile Pic.svg" alt="">
+                    <b>Bobur</b>
+                    <p>@boburmavlonovov</p>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="top">
+                <h3>Home</h3>
+                <span>✧</span>
+            </div>
+            <div class="write">
+                <div class="user-img"></div>
+                <div class="write-box">
+                    <img src="/Profile Pic.svg" alt="">
+                    <p>What's happening</p>
+                    <div class="write-bottom">
+                        <span>§</span>
+                        <span> 5</span>
+                        <span>▭ 9</span>
+                        <span>✓</span>
+                        <span>✓</span>
+                        <button>Tweet</button>
+                    </div>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-user"></div>
+                <div class="post-content">
+                    <div class="post-title">
+                         <img src="/Ellipse 6.svg" alt="">
+                        <b>Designsta</b>
+                        <span>@inner·25m</span>
+                    </div>
+                    <p>Twitterdagi o'zbeklar qanaqa qarashlarini ko'rish juda qiziq.</p>
+                    <div class="actions">
+                        <span>§</span>
+                        <span> 5</span>
+                        <span>▭ 9</span>
+                        <span>✓</span>
+                        <span>✓</span>
+                    </div>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-user"></div>
+                <div class="post-content">
+                    <div class="post-title">
+                        <img src="/Ellipse 6.png" alt="">
+                        <b>cloutexhibition</b>
+                        <span>@RajLahoti · 22m</span>
+                        <strong>...</strong>
+                    </div>
+                    <p>Yangi dasturchilar uchun foydali maslahatlar va imkoniyatlar haqida.</p>
+                    <div class="actions">
+                        <span>§</span>
+                        <span> 5</span>
+                        <span>▭ 9</span>
+                        <span>✓</span>
+                        <span>✓</span>
+                    </div>
+                </div>
+            </div>
+            <div class="post">
+                                        <img src="/Ellipse 6 (1).svg" alt="">
+                <div class="post-user"></div>
+                <div class="post-content">
+                    <div class="post-title">
+                        <b>CreativePhoto</b>
+                        <span>@cloutexhibition · 1h</span>
+                        <strong>...</strong>
+                    </div>
+                    <p>Abitdaa</p>
+                    <p>Kechirinlreyy</p>
+                    <div class="photo">
+                        <img width="450px" src="/image 8.svg" alt="">
+                    </div>
+                    <div class="actions">
+                        <span>✓ 10</span>
+                        <span>▭ 1</span>
+                        <span> 8</span>
+                        <span>§</span>
+                        <span>💫</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <input type="text" placeholder="⌕   Search Twitter">
+            <div class="card">
+                <h3>Trends for you</h3>
+                <div class="trend">
+                    <small>Trending in Germany</small>
+                    <b>Revolution</b>
+                    <span>50.4K Tweets</span>
+                </div>
+                <div class="trend">
+                    <b>Technology</b>
+                    <span>248K Tweets</span>
+                </div>
+                <div class="trend">
+                    <small>Trending in Germany</small>
+                    <b>Football</b>
+                    <span>182K Tweets</span>
+                </div>
+                <a>Show more</a>
+            </div>
+            <div class="card people">
+                <h3>You might like</h3>
+                <div class="person">
+                    <div class="small-img"><img width="45px" src="/Ellipse 5.svg" alt=""></div>
+                    <div>
+                        <b>Mushtariy</b>
+                        <p>@Mushsar565266</p>
+                    </div>
+                    <button>Follow</button>
+                </div>
+                <div class="person">
+                    <div class="small-img"><img width="45px" src="/Ellipse 5 (1).svg" alt=""></div>
+                    <div>
+                        <b>Shuhratbek</b>
+                        <p>@mrshukrat</p>
+                    </div>
+                    <button>Follow</button>
+                </div>
+                <a>Show more</a>
+            </div>
+            <div class="footer">
+                Terms of Service Privacy Policy Cookie Policy<br>
+                Imprint Ads Info More 2021 Twitte Inc
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+</body>
+</html>

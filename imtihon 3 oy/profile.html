@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #111;
+        }
+        .chap, .asosiy {
+            border-right: 1px solid #ddd;
+        }
+        .konteyner {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+        }
+        .chap {
+            width: 21%;
+            min-height: 100vh;
+            padding: 15px 25px;
+            position: relative;
+        }
+        .asosiy {
+            width: 55%;
+        }
+        .qismong {
+            width: 24%;
+            padding: 8px 15px;
+        }
+        .logotip {
+            font-size: 30px;
+            color: #1da1f2;
+            margin-bottom: 25px;
+        }
+        .menyu p {
+            margin: 0;
+            padding: 12px 8px;
+            font-size: 15px;
+        }
+        .menyu span {
+            margin-left: 12px;
+        }
+        .faol {
+            font-weight: bold;
+        }
+        .chap > button {
+            width: 145px;
+            padding: 11px;
+            margin-top: 15px;
+            border: 0;
+            border-radius: 25px;
+            background: #1da1f2;
+            color: #fff;
+            font-weight: bold;
+        }
+        .hisob {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .hisob p, .inson p {
+            margin: 3px 0;
+            font-size: 12px;
+            color: #777;
+        }
+        .rasm1, .sapshiniya {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: #ddd;
+        }
+        .tepa {
+            height: 55px;
+            padding: 0 15px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        .tepa b {
+            display: block;
+        }
+        .tepa small {
+            color: #777;
+            font-size: 12px;
+        }
+        .bet {
+            height: 140px;
+            background: #043b4a;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-family: Georgia, serif;
+            font-weight: bold;
+        }
+        .profil-qator {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .rasm2 {
+            width: 110px;
+            height: 110px;
+            margin: -55px 0 0 15px;
+            border: 4px solid #fff;
+            border-radius: 50%;
+            background: #ddd;
+            position: relative;
+        }
+        .profil-qator button {
+            margin: 12px 15px 0 0;
+            padding: 8px 16px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            background: #fff;
+            font-weight: bold;
+            font-size: 13px;
+        }
+        .malumot {
+            padding: 0 15px 15px;
+        }
+        .malumot b {
+            font-size: 17px;
+        }
+        .username {
+            margin: 3px 0 12px;
+            font-size: 13px;
+            color: #777;
+        }
+        .bio {
+            margin: 0 0 12px;
+            font-size: 14px;
+        }
+        .link {
+            color: #1da1f2;
+        }
+        .tafsilot {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            color: #777;
+        }
+        .qarash {
+            display: flex;
+            gap: 18px;
+            font-size: 13px;
+            color: #777;
+        }
+        .qarash b {
+            font-size: 13px;
+            color: #111;
+        }
+        .tablar {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+        }
+        .tab {
+            flex: 1;
+            padding: 14px 0 12px;
+            text-align: center;
+        }
+        .faol-tab {
+            font-weight: bold;
+            color: #111;
+            border-bottom: 3px solid #1da1f2;
+        }
+        .mahkam {
+            padding: 12px 15px 0 55px;
+            font-size: 12px;
+            color: #777;
+        }
+        .sapshina {
+            display: flex;
+            gap: 12px;
+            padding: 12px 15px 14px;
+            border-bottom: 1px solid #ddd;
+        }
+        .sapshina-matni {
+            flex: 1;
+        }
+        .sapshina-matni p {
+            margin: 6px 0;
+            font-size: 14px;
+        }
+        .xabar-sarlavhasi {
+            display: flex;
+            gap: 6px;
+        }
+        .xabar-sarlavhasi span {
+            font-size: 13px;
+            color: #777;
+        }
+        .xabar-sarlavhasi strong {
+            margin-left: auto;
+        }
+        .urush {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 18px;
+            font-size: 13px;
+            color: #777;
+        }
+        .yashil {
+            color: #17bf63;
+        }
+        .qizil {
+            color: #e0245e;
+        }
+        .qismong input {
+            width: 100%;
+            padding: 12px;
+            border: 0;
+            border-radius: 25px;
+            background: #eef1f2;
+            outline: none;
+            box-sizing: border-box;
+        }
+        .galereya {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            margin-top: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .galereya div {
+            height: 44px;
+            background: #ddd;
+        }
+        .karta {
+            margin-top: 15px;
+            padding: 12px;
+            background: #f7f8f8;
+            border-radius: 10px;
+        }
+        .karta h3 {
+            margin: 5px 0;
+        }
+        .karta a {
+            color: #1da1f2;
+            font-size: 13px;
+        }
+        .karta-bosh {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .qanday {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+        .qanday small, .qanday span {
+            display: block;
+            font-size: 11px;
+            color: #777;
+        }
+        .qanday b {
+            display: block;
+            margin: 4px 0;
+        }
+        .inson {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 15px 0;
+        }
+        .inson button {
+            margin-left: auto;
+            border: 0;
+            padding: 8px 14px;
+            border-radius: 18px;
+            background: #000;
+            color: #fff;
+            font-weight: bold;
+        }
+        .qaqa{
+            width: 700px;
+            height: 250px;
+           position: relative;
+           right: 200px;
+           top: 75px;
+        }
+    </style>
+</head>
+<body>
+    <div class="konteyner">
+        <div class="chap">
+            <div class="logotip">♥️</div>
+            <div class="menyu">
+                <p><span>🏠Home</span></p>
+                <p>✅ <span>Explore</span></p>
+                <p>🔔<span>Notifications</span></p>
+                <p>✉️<span>Messages</span></p>
+                <p>🔖 <span>Bookmarks</span></p>
+                <p>📃 <span>Lists</span></p>
+                <p class="faol">🧑🏻‍🦲 <span>Profile</span></p>
+                <p>🕗<span>More</span></p>
+            </div>
+            <button>Tweet</button>
+            <div class="hisob">
+                <div class="rasm1"><img width="45px" src="/Profile Pic.svg" alt=""></div>
+                <div>
+                    <b>Bobur</b>
+                    <p>@bobur_mavlonov</p>
+                </div>
+            </div>
+        </div>
+        <div class="asosiy">
+            <div class="tepa">
+                <span>←</span>
+                <div>
+                    <b>Bobur</b>
+                    <small>1,070 Tweets</small>
+                </div>
+            </div>
+            <div class="bet">Bobur Mavlonov</div>
+            <div class="profil-qator">
+                <div class="rasm2"><img width="115px" src="/Profile Pic.svg" alt=""></div>
+                <button>Edit profile</button>
+            </div>
+            <div class="malumot">
+                <b>Bobur</b>
+                <p class="username">@bobur_mavlonov</p>
+                <p class="bio">UX&UI designer at <span class="link">@abutechuz</span></p>
+                <div class="tafsilot">
+                    <span>📍 Mashag'daman</span>
+                    <span>🔗 <span class="link">t.me/boburjon_mavlonov</span></span>
+                    <span>🎈 Born November 24, 2000</span>
+                    <span>📅 Joined May 2020</span>
+                </div>
+                <div class="qarash">
+                    <span><b>67</b> Following</span>
+                    <span><b>47</b> Followers</span>
+                </div>
+            </div>
+            <div class="tablar">
+                <div class="tab faol-tab">Tweets</div>
+                <div class="tab">Tweets & replies</div>
+                <div class="tab">Media</div>
+                <div class="tab">Likes</div>
+            </div>
+            <div class="mahkam">📌 Pinned Tweet</div>
+            <div class="sapshina">
+                <div class="sapshiniya"><img width="40px" src="/Profile Pic.svg" alt=""></div>
+                <div class="sapshina-matni">
+                    <div class="xabar-sarlavhasi">
+                        <b>Bobur</b>
+                        <span>@bobur_mavlonov · Apr 1</span>
+                        <strong>...</strong>
+                    </div>
+                    <p>4-kursni tugatgunimcha kamida bitta biznesim bo'lishini, uylanish uchun moddiy jihatdan to'la-to'kis tayyor bo'lishni, sog'lik va jismoniy holatni normallashtirishni reja qildim</p>
+                    <div class="urush">
+                        <span>💬 10</span>
+                        <span>🔁 1</span>
+                        <span>🤍 8</span>
+                        <span>⬆️</span>
+                        <span>📊</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sapshina">
+                <div class="sapshiniya"><img width="40px" src="/Profile Pic.svg" alt=""></div>
+                <div class="sapshina-matni">
+                    <div class="xabar-sarlavhasi">
+                        <b>Bobur</b>
+                        <span>@bobur_mavlonov · Apr 1</span>
+                        <strong>•••</strong>
+                    </div>
+                    <p>Bizda shunaqa bir illat bor: gap bo'lsa bo'ldi, nima deyayotganimizga qarab ham o'tirmaymiz.</p>
+                    <p>Bitta biznes trener nito gapirib qo'ysa, hamma biznes trenerlar yomonga chiqadi slishkom aqlli odamlar nazdida.</p>
+                    <p>Gap faqat biznes trenerlar haqida emas.</p>
+                    <div class="urush">
+                        <span>💬</span>
+                        <span class="yashil">🔁 5</span>
+                        <span class="qizil">❤️ 9</span>
+                        <span>⬆️</span>
+                        <span>📊</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sapshina">
+                <div class="sapshiniya"><img width="40px" src="/Profile Pic.svg" alt=""></div>
+                <div class="sapshina-matni">
+                    <div class="xabar-sarlavhasi">
+                        <b>Bobur</b>
+                        <span>@bobur_mavlonov · Apr 1</span>
+                        <strong>•••</strong>
+                    </div>
+                    <p>A bo'pti maskamasman</p>
+                </div>
+                <img class="qaqa" src="/image 8 (1).svg" alt="">
+            </div>
+        </div>
+        <div class="qismong">
+            <input type="text" placeholder=" Search Twitter">
+            <div class="galereya">
+            </div>
+            <div class="karta odamlar">
+                <h3>You might like</h3>
+                <div class="inson">
+                    <div class="rasm1"><img width="40px" src="/Ellipse 5.svg" alt=""></div>
+                    <div>
+                        <b>Mushtariy</b>
+                        <p>@Mushtar565266</p>
+                    </div>
+                    <button>Follow</button>
+                </div>
+                <div class="inson">
+                    <div class="rasm1"><img width="40px" src="/Ellipse 5 (1).svg" alt=""></div>
+                    <div>
+                        <b>Shuhratbek</b>
+                        <p>@mrshukhrat</p>
+                    </div>
+                    <button>Follow</button>
+                </div>
+                <a>Show more</a>
+            </div>
+            <div class="karta">
+                <div class="karta-bosh">
+                    <h3>Trends for you</h3>
+                    <span>⚙️</span>
+                </div>
+                <div class="qanday">
+                    <div>
+                        <small>Trending in Germany</small>
+                        <b>Revolution</b>
+                        <span>50.4K Tweets</span>
+                    </div>
+                    <strong>•••</strong>
+                </div>
+                <div class="qanday">
+                    <div>
+                        <small>Trending in Germany</small>
+                        <b>Revolution</b>
+                        <span>50.4K Tweets</span>
+                    </div>
+                    <strong>•••</strong>
+                </div>
+                <div class="qanday">
+                    <div>
+                        <small>Trending in Germany</small>
+                        <b>Revolution</b>
+                        <span>50.4K Tweets</span>
+                    </div>
+                    <strong>•••</strong>
+                </div>
+                <a>Show more</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
